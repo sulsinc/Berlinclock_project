@@ -1,0 +1,959 @@
+//BERLIN CLOCK
+//DEFINITIVE VERSION
+/****************************************************************************/
+#include <Wire.h>
+#include "DS1307.h"
+
+DS1307 clock;//define a object of DS1307 class
+void setup()
+{
+	Serial.begin(9600);
+	clock.begin();
+	
+  pinMode(32, OUTPUT);
+  pinMode(31, OUTPUT);
+  pinMode(30, OUTPUT);
+  pinMode(29, OUTPUT);
+  
+  pinMode(28, OUTPUT);
+  pinMode(27, OUTPUT);
+  pinMode(26, OUTPUT);
+  pinMode(25, OUTPUT);
+  pinMode(24, OUTPUT);
+  pinMode(23, OUTPUT);
+  pinMode(22, OUTPUT);
+  pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(2, OUTPUT);
+  
+}
+void loop()
+{
+	printTime();
+  
+  
+  
+}
+/*Function: Display time on the serial monitor*/
+void printTime()
+{
+  {
+  clock.getTime();
+  Serial.print(clock.hour, DEC);
+  Serial.print(":");
+  Serial.print(clock.minute, DEC);  
+  }
+{
+if(clock.minute==1){
+  digitalWrite(2,HIGH);
+  }  
+if(clock.minute==2){
+  digitalWrite(3,HIGH);
+  }
+if(clock.minute==3){
+  digitalWrite(4,HIGH);
+    }
+if(clock.minute==4){
+  digitalWrite(5,HIGH);
+  }  
+if(clock.minute==5){
+  digitalWrite(6,HIGH);
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==6){
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==7){
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==8){
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,LOW);
+  }  
+if(clock.minute==9){
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,HIGH);
+  }
+ if(clock.minute==10){
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==11){
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==12){
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==13){
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==14){
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,HIGH);
+  }
+if(clock.minute==15){
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==16){
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==17){
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==18){
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,LOW);
+  } 
+if(clock.minute==19){
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,HIGH);
+  }
+if(clock.minute==20){
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==21){
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==22){
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==23){
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==24){
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,HIGH);
+  }
+if(clock.minute==25){
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==26){
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==27){
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==28){
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==29){
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,HIGH);
+  }
+if(clock.minute==30){
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==31){
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==32){
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==33){
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==34){
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,LOW);
+  }
+ if(clock.minute==35){
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+ if(clock.minute==36){
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+ if(clock.minute==37){
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==38){
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==39){
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==40){
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==41){
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==42){
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==43){
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==44){
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,HIGH);
+  }
+if(clock.minute==45){
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==46){
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==47){
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==48){
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==49){
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,HIGH);
+  }
+if(clock.minute==50){
+  digitalWrite(23,HIGH);
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==50){
+  digitalWrite(23,HIGH);
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==51){
+  digitalWrite(23,HIGH);
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==52){
+  digitalWrite(23,HIGH);
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==53){
+  digitalWrite(23,HIGH);
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,LOW);
+  }
+  if(clock.minute==54){
+  digitalWrite(23,HIGH);
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,HIGH);
+  }
+if(clock.minute==55){
+  digitalWrite(24,HIGH);
+  digitalWrite(23,HIGH);
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+if(clock.minute==56){
+  digitalWrite(24,HIGH);
+  digitalWrite(23,HIGH);
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+  if(clock.minute==57){
+  digitalWrite(24,HIGH);
+  digitalWrite(23,HIGH);
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+  if(clock.minute==58){
+  digitalWrite(24,HIGH);
+  digitalWrite(23,HIGH);
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,LOW);
+  }
+  if(clock.minute==59){
+  digitalWrite(24,HIGH);
+  digitalWrite(23,HIGH);
+  digitalWrite(22,HIGH);
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  digitalWrite(11,HIGH);
+  digitalWrite(10,HIGH);
+  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,HIGH);
+  }
+  if(clock.minute==0){
+  digitalWrite(24,LOW);
+  digitalWrite(23,LOW);
+  digitalWrite(22,LOW);
+  digitalWrite(13,LOW);
+  digitalWrite(12,LOW);
+  digitalWrite(11,LOW);
+  digitalWrite(10,LOW);
+  digitalWrite(9,LOW);
+  digitalWrite(8,LOW);
+  digitalWrite(7,LOW);
+  digitalWrite(6,LOW);
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  }
+}
+{
+
+if(clock.hour==1){
+  digitalWrite(25,HIGH);
+  digitalWrite(26,LOW);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==2){
+  digitalWrite(25,HIGH);
+  digitalWrite(26,HIGH);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==3){
+  digitalWrite(25,HIGH);
+  digitalWrite(26,HIGH);
+  digitalWrite(27,HIGH);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==4){
+  digitalWrite(25,HIGH);
+  digitalWrite(26,HIGH);
+  digitalWrite(27,HIGH);
+  digitalWrite(28,HIGH);
+}
+if(clock.hour==5){
+  digitalWrite(29,HIGH);
+  digitalWrite(25,LOW);
+  digitalWrite(26,LOW);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==6){
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,LOW);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==7){
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,HIGH);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==8){
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,HIGH);
+  digitalWrite(27,HIGH);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==9){
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,HIGH);
+  digitalWrite(27,HIGH);
+  digitalWrite(28,HIGH);
+}
+if(clock.hour==10){
+  digitalWrite(30,HIGH);
+  digitalWrite(29,HIGH);
+  digitalWrite(25,LOW);
+  digitalWrite(26,LOW);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==11){
+  digitalWrite(30,HIGH);
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,LOW);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==12){
+  digitalWrite(30,HIGH);
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,HIGH);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==13){
+  digitalWrite(30,HIGH);
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,HIGH);
+  digitalWrite(27,HIGH);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==14){
+  digitalWrite(30,HIGH);
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,HIGH);
+  digitalWrite(27,HIGH);
+  digitalWrite(28,HIGH);
+}
+if(clock.hour==15){
+  digitalWrite(31,HIGH);
+  digitalWrite(30,HIGH);
+  digitalWrite(29,HIGH);
+  digitalWrite(25,LOW);
+  digitalWrite(26,LOW);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==16){
+  digitalWrite(31,HIGH);
+  digitalWrite(30,HIGH);
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,LOW);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==17){
+  digitalWrite(31,HIGH);
+  digitalWrite(30,HIGH);
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,HIGH);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==18){
+  digitalWrite(31,HIGH);
+  digitalWrite(30,HIGH);
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,HIGH);
+  digitalWrite(27,HIGH);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==19){
+  digitalWrite(31,HIGH);
+  digitalWrite(30,HIGH);
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,HIGH);
+  digitalWrite(27,HIGH);
+  digitalWrite(28,HIGH);
+}
+if(clock.hour==20){
+  digitalWrite(32,HIGH);
+  digitalWrite(31,HIGH);
+  digitalWrite(30,HIGH);
+  digitalWrite(29,HIGH);
+  digitalWrite(25,LOW);
+  digitalWrite(26,LOW);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==21){
+  digitalWrite(32,HIGH);
+  digitalWrite(31,HIGH);
+  digitalWrite(30,HIGH);
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,LOW);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==22){
+  digitalWrite(32,HIGH);
+  digitalWrite(31,HIGH);
+  digitalWrite(30,HIGH);
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,HIGH);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==23){
+  digitalWrite(32,HIGH);
+  digitalWrite(31,HIGH);
+  digitalWrite(30,HIGH);
+  digitalWrite(29,HIGH);
+  digitalWrite(25,HIGH);
+  digitalWrite(26,HIGH);
+  digitalWrite(27,HIGH);
+  digitalWrite(28,LOW);
+}
+if(clock.hour==0){
+  digitalWrite(32,LOW);
+  digitalWrite(31,LOW);
+  digitalWrite(30,LOW);
+  digitalWrite(29,LOW);
+  digitalWrite(25,LOW);
+  digitalWrite(26,LOW);
+  digitalWrite(27,LOW);
+  digitalWrite(28,LOW);
+}
+}
+}
